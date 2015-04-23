@@ -6,11 +6,11 @@
     options                   = options                    || {};
     options.url               = options.url                || null;
     options.notify            = options.notify             || {};
-    options.notifySpecSuccess = options.notify.specSuccess || false;
-    options.notifySpecFailure = options.notify.specFailure || true;
-    options.notifySpecSkipped = options.notify.specSkipped || false;
     options.notifyRunComplete = options.notify.runComplete || true;
     options.notifyRunStart    = options.notify.runStart    || true;
+    options.notifySpecFailure = options.notify.specFailure || true;
+    options.notifySpecSkipped = options.notify.specSkipped || false;
+    options.notifySpecSuccess = options.notify.specSuccess || false;
 
     this.onRunStart = function() {
       if (options.url === null) {
@@ -46,7 +46,7 @@
 
   WebHookReporter.$inject = ['config.webHookReporter'];
 
-  module.exports = { 'reporter:web-hook': ['type', WebHookReporter] };
+  module.exports = { 'reporter:webhook': ['type', WebHookReporter] };
 
   function write(msg) {
     process.stdout.write(msg + '\n');
