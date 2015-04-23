@@ -28,7 +28,6 @@
       } else if (result.success) {
         type = options.notifySpecSuccess ? 'specSuccess' : null;
       } else {
-        console.log('failed')
         type = options.notifySpecFailure ? 'specFailure' : null;
       }
 
